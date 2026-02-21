@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 export default function Todo({item ,onUpdate, onDelete}) {
   const [isEdit, setIsEdit] = useState(false);
@@ -25,7 +26,7 @@ export default function Todo({item ,onUpdate, onDelete}) {
     return (
       <form className="todoUpdateForm" onSubmit={handleSubmit}>
         <input type="text" className="todoInput" onChange={handleChange} value={newValue}/>
-        <button className="button" onClick={handleClickUpdateTodo}>Update</button>
+        <button className="buttonEdit" onClick={handleClickUpdateTodo}>Update</button>
       </form>
     );
   }
@@ -46,3 +47,9 @@ export default function Todo({item ,onUpdate, onDelete}) {
     </div>
   );
 }
+
+Todo.propTypes = {
+  item: PropTypes.object.isRequired,
+  onUpdate: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
