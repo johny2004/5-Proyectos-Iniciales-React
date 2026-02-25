@@ -164,7 +164,7 @@ const buttonStyle = {
             style={inputStyles.input}
           />
         </div>
-        <input style={buttonStyle} type="submit" value="Register Book" />
+        <input style={buttonStyle} type="submit" value="Register Book"   />
       </form>
     </Layout>
   );
